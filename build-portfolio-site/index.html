@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta tags-->
+    <meta charset="UTF-8">
+    <meta name="description" content="Build a portfolio site to enhance the front end skills.">
+    <meta name="keywords" content="Front End, Portfolio, Project, Skills, Work">
+    <meta name="author" content="Pradeep Kumar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./favicon.ico">
+
+    <!--title-->
+    <title>Front End Developer | Pradeep Kumar</title>
+
+    <!--vendor stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!--vendor scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!--app stylesheets-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <div class="brand-logo">
+            <img class="logo" src="img/profile.jpg" alt="Front End Company" title="Front End Company">
+        </div>
+        <div class="brand-title">
+            <h1 class="title">Pradeep Kumar</h1>
+            <h4 class="sub-title">Front End Developer</h4>
+        </div>
+    </header>
+
+    <!--main content-->
+    <main>
+        <div class="profile-banner">
+            <!--banner image via picture element with srcset-->
+            <picture>
+                <source media="(max-width: 480px)" srcset="img/banner-small.jpg">
+                <source media="(max-width: 768px)" srcset="img/banner-medium.jpg">
+                <img src="img/banner-large.jpg" alt="Front End Profile" title="Front End Profile">
+            </picture>
+        </div>
+        <section class="profile-work">
+            <h2>Featured Work</h2>
+            <!--showcase featured work-->
+            <!--TODO: add extra feature later-->
+            <div class="showcase-group">
+                <!--cards via figure element-->
+                <figure class="showcase-card">
+                    <!--feature cover-->
+                    <img class="showcase-img" src="./img/appify.jpg" alt="Appify" title="Appify">
+                    <!--feature caption-->
+                    <figcaption class="showcase-info">
+                        <h3 class="showcase-title">Appify</h3>
+                        <a class="showcase-link" href="#" target="_blank">https://github.com/udacity/Appify</a>
+                    </figcaption>
+                </figure>
+                <figure class="showcase-card">
+                    <img class="showcase-img" src="./img/sunflower.jpg" alt="Sunflower" title="Sunflower">
+                    <figcaption class="showcase-info">
+                        <h3 class="showcase-title">Sunflower</h3>
+                        <a class="showcase-link" href="#" target="_blank">https://github.com/udacity/Sunflower</a>
+                    </figcaption>
+                </figure>
+                <figure class="showcase-card">
+                    <img class="showcase-img" src="./img/bokeh.jpg" alt="Bokeh" title="Bokeh">
+                    <figcaption class="showcase-info">
+                        <h3 class="showcase-title">Bokeh</h3>
+                        <a class="showcase-link" href="#" target="_blank">https://github.com/udacity/Bokeh</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+        <!--copyright-->
+        <p class="copy-right">
+            <span>&copy; Copyright 2018</span>
+            <a href="#">www.buildportfoliosite.com</a>
+        </p>
+    </footer>
+</body>
+
+</html>
