@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta tags-->
+    <meta charset="UTF-8">
+    <meta name="description" content="The real-life game, players flip over cards to locate the pairs that match.">
+    <meta name="keywords" content="Front End, Memory Game, Project, Skills, Work, Concentration, Guess">
+    <meta name="author" content="Pradeep Kumar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./favicon.ico">
+
+    <!--title-->
+    <title>Memory Game | Empower Guess & Concentration</title>
+
+    <!--vendor stylesheets-->
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!--vendor scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!--app stylesheets-->
+    <link rel="stylesheet" href="./css/leader.style.css">
+    <link rel="stylesheet" href="./css/modal.style.css">
+    <link rel="stylesheet" href="./css/app.style.css">
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <h1>Matching Game</h1>
+    </header>
+
+    <!--main content-->
+    <main>
+        <section>
+            <div class="player-info">
+                <span class="player-name"></span>
+            </div>
+            <div class="deck-stats">
+                <div class="star-count">
+                    <div></div>
+                </div>
+                <div class="moves">
+                    <span class="moves-count"></span>&nbsp;
+                    <span>Moves</span>
+                </div>
+                <div class="matches">
+                    <span class="matches-count"></span>&nbsp;
+                    <span>Match</span>
+                </div>
+                <div class="timer">
+                    <span>
+                        <i class="fa fa-clock-o"></i>
+                    </span>&nbsp;
+                    <span class="timer-count"></span>
+                </div>
+                <div class="restart">
+                    <i class="fa fa-repeat"></i>
+                </div>
+            </div>
+            <div class="deck">
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-umbrella"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-umbrella"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-tree"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-tree"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-magnet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-magnet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-futbol-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-futbol-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-subway"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-subway"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-diamond"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-holder">
+                        <div class="front"></div>
+                        <div class="back">
+                            <i class="fa fa-diamond"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+    </footer>
+
+    <div class="leader-board">
+        <div class="leader-header">
+            <span class="title">Top Scorers</span>
+            <i class="fa fa-angle-up"></i>
+            <i class="fa fa-angle-down"></i>
+        </div>
+        <div class="leader-content">
+            <div class="leader-table-head">
+                <div class="record-header">
+                    <div class="record-name">
+                        <span>Player</span>
+                    </div>
+                    <div class="record-moves">
+                        <span>Moves</span>
+                    </div>
+                    <div class="record-time">
+                        <span>Time</span>
+                    </div>
+                    <div class="record-rating">
+                        <span>Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="leader-table-body">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- Start Modal -->
+<div id="startModal" class="modal-box">
+    <div class="modal-content">
+        <i class="fa fa-4x fa-address-card"></i>
+        <div class="player-form modal-body">
+            <div class="input-field">
+                <i class="material-icons prefix">
+                    <i class="fa fa-user-circle-o"></i>
+                </i>
+                <input type="text" id="playerName" class="autocomplete" maxlength="20">
+                <label for="playerName">Enter Name to Start Game</label>
+            </div>
+            <a id="startGame" class="btn disabled waves-effect waves-light">START</a>
+        </div>
+    </div>
+</div>
+
+<!-- Start Modal -->
+<div id="completeModal" class="modal-box">
+    <div class="modal-content">
+        <i class="fa fa-8x fa-check-circle-o"></i>
+        <div class="player-stats modal-body">
+            <span class="msg-1">Congratulations !!</span>
+            <span class="winning-title msg-1"></span>
+            <span class="msg-1">You Win !!</span>
+            <span class="winning-stats msg-2"></span>
+            <span class="msg-2">Woooooo!</span>
+            <a id="continueGame" class="btn waves-effect waves-light">Play Again</a>
+            <span>OR</span>
+            <a id="newGame" class="btn waves-effect waves-light">New Player</a>
+        </div>
+    </div>
+</div>
+
+<!--app scripts-->
+<script src="./js/modal.script.js"></script>
+<script src="./js/leader.script.js"></script>
+<script src="./js/timer.script.js"></script>
+<script src="./js/app.script.js"></script>
+
+</html>

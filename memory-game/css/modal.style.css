@@ -1,0 +1,91 @@
+.modal-box {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	height: 100vh;
+	border: 1px solid #888;
+	width: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-content .fa {
+	color: #04bbad;
+}
+
+.modal-content .fa.fa-8x {
+	font-size: 8em;
+}
+
+.modal-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 40px;
+	padding: 20px;
+}
+
+.player-form {
+	width: 400px;
+}
+
+.player-form .input-field {
+	margin: 40px 0;
+	width: 100%;
+}
+
+.player-stats .msg-1 {
+	display: block;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.player-stats .winning-title {
+	color: #2e3d49
+}
+
+.player-stats .msg-2 {
+	display: block;
+	font-size: 20px;
+}
+
+.player-stats .btn {
+	margin: 10px 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.modal-content {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.modal-content {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.modal-content {
+		width: 100%;
+	}
+	.player-form {
+		width: 360px;
+	}
+}
