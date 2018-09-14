@@ -67,6 +67,17 @@ section {
 	margin: 10px;
 }
 
+.card-item:focus .front {
+	border: 2px solid #969EA4;
+}
+
+.card-item.matched:focus .back {
+	border: 2px solid #039589;
+}
+
+.card-item.flipped:focus .back {
+	border: 2px solid #017D9F;
+}
 
 /* flip the pane when clicked */
 

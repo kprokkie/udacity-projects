@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // load modal
 function loadModal(modal) {
+    removeKeyEventListener();
     modal.style.display = 'block';
     modal.querySelector('.modal-content').classList.add(...modalInClasses);
 }
 
 // hide modal
 function hideModal(modal) {
+    addKeyEventListener();
     modal.querySelector('.modal-content').classList.remove(...modalInClasses);
     modal.querySelector('.modal-content').classList.add(...modalOutClasses);
     setTimeout(function () {
@@ -50,6 +52,7 @@ startGameBtn.addEventListener('click', function () {
     // set player name to game board
     document.querySelector('.player-name').textContent = playerName;
     hideModal(startModal);
+    
 });
 
 continueGameBtn.addEventListener('click', function () {
