@@ -38,12 +38,20 @@
     <!--main content-->
     <main>
         <section>
-            <div class="player-info">
-                <span class="player-name"></span>
+            <!--user info-->
+            <div class="information">
+                <div class="player-info">
+                    <span>HELLO !</span>
+                    <span class="player-name"></span>
+                </div>
+                <div class="instruct-info">
+                    <i class="fa fa-2x fa-keyboard-o"></i>
+                    <i class="fa fa-2x fa-info-circle"></i>
+                </div>
             </div>
-            <div class="deck-stats">
+            <!--game stats-->
+            <div class="game-stats">
                 <div class="star-count">
-                    <div></div>
                 </div>
                 <div class="moves">
                     <span class="moves-count"></span>&nbsp;
@@ -54,152 +62,20 @@
                     <span>Match</span>
                 </div>
                 <div class="timer">
-                    <span>
-                        <i class="fa fa-clock-o"></i>
-                    </span>&nbsp;
+                    <i class="fa fa-clock-o"></i>&nbsp;
                     <span class="timer-count"></span>
                 </div>
                 <div class="restart">
                     <i class="fa fa-repeat"></i>
                 </div>
             </div>
-            <div class="deck">
-                <div class="card-item" tabindex="1">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-umbrella"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="2">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-umbrella"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="3">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-tree"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="4">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-tree"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="5">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-magnet"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="6">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-magnet"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="7">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-paper-plane"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="8">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-paper-plane"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="9">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-futbol-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="10">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-futbol-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="11">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-subway"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="12">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-subway"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="13">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="14">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="15">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-diamond"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-item" tabindex="16">
-                    <div class="card-holder">
-                        <div class="front"></div>
-                        <div class="back">
-                            <i class="fa fa-diamond"></i>
-                        </div>
-                    </div>
-                </div>
+            <!--card deck-->
+            <div class="card-deck">
             </div>
         </section>
     </main>
 
-    <!--footer-->
-    <footer>
-    </footer>
-
+    <!--Leader Board-->
     <div class="leader-board">
         <div class="leader-header">
             <span class="title">Top Scorers</span>
@@ -228,41 +104,121 @@
         </div>
     </div>
 
-</body>
+    <!--footer-->
+    <footer>
+    </footer>
 
-<!-- Start Modal -->
-<div id="startModal" class="modal-box">
-    <div class="modal-content">
-        <i class="fa fa-4x fa-address-card"></i>
-        <div class="player-form modal-body">
-            <div class="input-field">
-                <i class="material-icons prefix">
-                    <i class="fa fa-user-circle-o"></i>
-                </i>
-                <input type="text" id="playerName" class="autocomplete" maxlength="20">
-                <label for="playerName">Enter Name to Start Game</label>
+    <!-- Start Modal -->
+    <div id="startModal" class="modal-box form-modal">
+        <div class="modal-content">
+            <i class="fa fa-4x fa-address-card"></i>
+            <h4>Player Info</h4>
+            <div class="modal-body">
+                <div class="form-wrapper">
+                    <div class="input-field">
+                        <i class="material-icons prefix">
+                            <i class="fa fa-user-circle-o"></i>
+                        </i>
+                        <input type="text" id="playerName" class="autocomplete" autofocus maxlength="20">
+                        <label for="playerName">Enter Name to Start Game</label>
+                    </div>
+                    <a id="startGame" class="btn disabled waves-effect waves-light">START</a>
+                </div>
             </div>
-            <a id="startGame" class="btn disabled waves-effect waves-light">START</a>
         </div>
     </div>
-</div>
 
-<!-- Start Modal -->
-<div id="completeModal" class="modal-box">
-    <div class="modal-content">
-        <i class="fa fa-8x fa-check-circle-o"></i>
-        <div class="player-stats modal-body">
-            <span class="msg-1">Congratulations !!</span>
-            <span class="winning-title msg-1"></span>
-            <span class="msg-1">You Win !!</span>
-            <span class="winning-stats msg-2"></span>
-            <span class="msg-2">Woooooo!</span>
-            <a id="continueGame" class="btn waves-effect waves-light">Play Again</a>
-            <span>OR</span>
-            <a id="newGame" class="btn waves-effect waves-light">New Player</a>
+    <!-- Complete Modal -->
+    <div id="completeModal" class="modal-box">
+        <div class="modal-content">
+            <i class="fa fa-6x fa-check-circle-o"></i>
+            <h4>Congratulations</h4>
+            <div class="modal-body">
+                <div class="congrats-wrapper">
+                    <span class="winning-title msg-1"></span>
+                    <span class="msg-1">You Win !!</span>
+                    <span class="winning-stats msg-2"></span>
+                    <span class="msg-2">Woooooo!</span>
+                    <div class="btn-group">
+                        <a id="continueGame" class="btn waves-effect waves-light">Play Again</a>
+                        <span> - OR - </span>
+                        <a id="newGame" class="btn waves-effect waves-light">New Player</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Game Info Modal -->
+    <div id="gameInfoModal" class="modal-box game-modal">
+        <div class="modal-content">
+            <i class="fa fa-4x fa-info-circle"></i>
+            <h4>About Game</h4>
+            <div class="modal-body">
+                <div class="info-wrapper">
+                    <p>The game board consists of sixteen
+                        <strong>cards</strong> arranged in a grid. The deck is made up of eight different pairs of cards, each with
+                        different symbols on one side. The cards are arranged randomly on the grid with the symbol face down.</p>
+                    <p>The gameplay
+                        <strong>rules</strong> are very simple: flip over
+                        <strong>two</strong> hidden cards at a time to locate the ones that match!</p>
+                    <figure class="showcase-card">
+                        <img src="./img/match-success.png" alt="Matched Cards" title="Matched Cards">
+                        <figcaption class="showcase-info">
+                            <span>If the cards match, both cards show success stay flipped over.</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="showcase-card">
+                        <img src="./img/mismatch-warning.png" alt="Mismatched Cards" title="Mismatched Cards">
+                        <figcaption class="showcase-info">
+                            <span>If the cards do not match, both cards show warning and flipped back.</span>
+                        </figcaption>
+                    </figure>
+                    <p>The game ends once all cards have been correctly matched.</p>
+                    <a id="closeInfoModalBtn" class="btn waves-effect waves-light">CLOSE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Info Modal -->
+    <div id="keyInfoModal" class="modal-box key-modal">
+        <div class="modal-content">
+            <i class="fa fa-4x fa-keyboard-o"></i>
+            <h4>Key Controls</h4>
+            <div class="modal-body">
+                <div class="key-mapper">
+                    <div>
+                        <span class="key-code">LEFT KEY</span>
+                        <span>To Move Left</span>
+                    </div>
+                    <div>
+                        <span class="key-code">RIGHT KEY</span>
+                        <span>To Move Right</span>
+                    </div>
+                    <div>
+                        <span class="key-code">UP KEY</span>
+                        <span>To Move Upward</span>
+                    </div>
+                    <div>
+                        <span class="key-code">DOWN KEY</span>
+                        <span>To Mode Down</span>
+                    </div>
+                    <div>
+                        <span class="key-code">ENTER KEY</span>
+                        <span>To Flip Card</span>
+                    </div>
+                    <div>
+                        <span class="key-code">SPACE KEY</span>
+                        <span>To Reset Game</span>
+                    </div>
+                </div>
+                <a id="closeKeyModalBtn" class="btn waves-effect waves-light">CLOSE</a>
+            </div>
+        </div>
+    </div>
+
+</body>
 
 <!--app scripts-->
 <script src="./js/modal.script.js"></script>

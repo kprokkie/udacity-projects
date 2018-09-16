@@ -1,3 +1,7 @@
+/*------------------------------------------------------------------
+[Leader Stylesheet]
+-------------------------------------------------------------------*/
+
 .leader-board {
 	position: fixed;
 	right: 0;
@@ -110,6 +114,9 @@
 	font-size: 10px;
 	color: #32e232;
 }
+
+
+/* Media Query */
 
 @media screen and (max-width: 480px) {
 	.leader-board {

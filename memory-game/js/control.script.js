@@ -17,26 +17,22 @@ const MAX_COUNT = 16;
 const HORIZONTAL_SHIFTER = 1;
 const VERTICAL_SHIFTER = 4;
 
-// holding deck (card item holder)
-// REASON: quering for an element inside it is more optimized than quering inside in whole document
-const deck = document.querySelector('.deck');
-
 /**
  * @description Adding key event listener on document
  */
 function addKeyEventListener() {
-    document.addEventListener('keydown', function (e) {
-        handleKeyEvent(e);
-    });
+	document.addEventListener('keydown', function (e) {
+		handleKeyEvent(e);
+	});
 }
 
 /**
  * @description Removing key event listener from document
  */
 function removeKeyEventListener() {
-    document.removeEventListener('keydown', function (e) {
-        handleKeyEvent(e);
-    });
+	document.removeEventListener('keydown', function (e) {
+		handleKeyEvent(e);
+	});
 }
 
 /**
@@ -44,19 +40,19 @@ function removeKeyEventListener() {
  * @param {Event} e - Event raised by key
  */
 function handleKeyEvent(e) {
-    // handling only TAB, ENTER & ARROW keys to play game
-    if ([LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY, TAB_KEY, ENTER_KEY, SPACE_KEY].includes(e.keyCode)) {
-        const focusCard = deck.querySelector('.card-item:focus');
-        if (focusCard) {
-            const currIndex = +focusCard.attributes.tabindex.value;
-            cardAction(e, currIndex, focusCard);
-        } else {
-             // default focus when any key game key (arrow) hit
-            if ([ENTER_KEY, SPACE_KEY].includes(e.keyCode)) {
-                cardAction(e, 0);
-            }
-        }
-    }
+	// handling only TAB, ENTER & ARROW keys to play game
+	if ([LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY, TAB_KEY, ENTER_KEY, SPACE_KEY].includes(e.keyCode)) {
+		const focusCard = cardDeck.querySelector('.card-item:focus');
+		if (focusCard) {
+			const currIndex = +focusCard.attributes.tabindex.value;
+			cardAction(e, currIndex, focusCard);
+		} else {
+			// default focus when any key game key (arrow) hit
+			if (![ENTER_KEY, SPACE_KEY].includes(e.keyCode)) {
+				cardAction(e, 0);
+			}
+		}
+	}
 }
 
 /**
@@ -66,35 +62,42 @@ function handleKeyEvent(e) {
  * @param {Element} card - Current focussed card element
  */
 function cardAction(e, index, card) {
-    e.preventDefault();
-    if (index) {
-        switch (e.keyCode) {
-            case TAB_KEY: index === MAX_COUNT ? index = MIN_COUNT : index = index + HORIZONTAL_SHIFTER;
-                break;
-            case RIGHT_KEY: index = index + HORIZONTAL_SHIFTER;
-                break;
-            case LEFT_KEY: index = index - HORIZONTAL_SHIFTER;
-                break;
-            case UP_KEY: index = index - VERTICAL_SHIFTER;
-                break;
-            case DOWN_KEY: index = index + VERTICAL_SHIFTER;
-                break;
-            case ENTER_KEY: card.click(); // flip card
-                break;
-            case SPACE_KEY: resetGame.click(); // reset game
-            default:
-                break;
-        }
-    } else {
-        // default focus when any key game key (arrow) hit
-        index++;
-    }
+	e.preventDefault();
+	if (index) {
+		switch (e.keyCode) {
+			case TAB_KEY:
+				index === MAX_COUNT ? index = MIN_COUNT : index = index + HORIZONTAL_SHIFTER;
+				break;
+			case RIGHT_KEY:
+				index = index + HORIZONTAL_SHIFTER;
+				break;
+			case LEFT_KEY:
+				index = index - HORIZONTAL_SHIFTER;
+				break;
+			case UP_KEY:
+				index = index - VERTICAL_SHIFTER;
+				break;
+			case DOWN_KEY:
+				index = index + VERTICAL_SHIFTER;
+				break;
+			case ENTER_KEY:
+				card.click(); // flip card
+				break;
+			case SPACE_KEY:
+				resetBtn.click(); // reset game
+			default:
+				break;
+		}
+	} else {
+		// default focus when any key game key (arrow) hit
+		index++;
+	}
 
-    // DONT: navigate when ENTER is hit i.e. is for only for arrow
-    if (e.keyCode !== ENTER_KEY) {
-        index = e.keyCode === SPACE_KEY ? 1 : index;
-        shiftCardFocus(index);
-    }
+	// DONT: navigate when ENTER is hit i.e. is for only for arrow
+	if (e.keyCode !== ENTER_KEY) {
+		index = e.keyCode === SPACE_KEY ? 1 : index;
+		shiftCardFocus(index);
+	}
 }
 
 /**
@@ -102,7 +105,7 @@ function cardAction(e, index, card) {
  * @param {number} index - Index of card on which focus have to shift
  */
 function shiftCardFocus(index) {
-    if (MIN_COUNT <= index && index <= MAX_COUNT) {
-        deck.querySelector(`[tabindex="${index}"]`).focus();
-    }
+	if (MIN_COUNT <= index && index <= MAX_COUNT) {
+		cardDeck.querySelector(`[tabindex="${index}"]`).focus();
+	}
 }

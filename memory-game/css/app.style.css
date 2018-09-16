@@ -1,3 +1,8 @@
+/*------------------------------------------------------------------
+[Card Stylesheet]
+-------------------------------------------------------------------*/
+
+
 /* Body */
 
 body {
@@ -29,7 +34,40 @@ section {
 	margin-bottom: 40px;
 }
 
-.deck-stats {
+
+/* Info */
+
+.information {
+	width: 600px;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	width: 600px;
+}
+
+.player-info {
+	font-size: 24px;
+	font-weight: bold;
+	color: #000;
+}
+
+.player-info .player-name {
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+
+.instruct-info .fa {
+	cursor: pointer;
+}
+
+.instruct-info .fa.fa-keyboard-o {
+	margin-right: 10px;
+}
+
+
+/* Game Stats */
+
+.game-stats {
 	width: 600px;
 	display: flex;
 	font-size: 18px;
@@ -37,19 +75,18 @@ section {
 	justify-content: space-around;
 }
 
-.deck-stats .timer {}
-
-.deck-stats span[class$="-count"] {
+.game-stats span[class$="-count"] {
 	font-weight: bold;
 }
 
-.deck-stats .moves {}
-
-.deck-stats .restart {
+.game-stats .restart {
 	cursor: pointer;
 }
 
-.deck {
+
+/* Deck */
+
+.card-deck {
 	width: 600px;
 	display: flex;
 	flex-flow: wrap;
@@ -60,7 +97,7 @@ section {
 }
 
 
-/* entire container, keeps perspective */
+/* Card */
 
 .card-item {
 	perspective: 1000;
@@ -79,8 +116,6 @@ section {
 	border: 2px solid #017D9F;
 }
 
-/* flip the pane when clicked */
-
 .card-item.flipped .card-holder,
 .card-item.matched .card-holder {
 	transform: rotateY(180deg);
@@ -93,17 +128,11 @@ section {
 	height: 125px;
 }
 
-
-/* flip speed goes here */
-
 .card-holder {
 	transition: 0.6s;
 	transform-style: preserve-3d;
 	position: relative;
 }
-
-
-/* hide back of pane during swap */
 
 .front,
 .back {
@@ -119,16 +148,10 @@ section {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-
-/* front pane, placed above back */
-
 .front {
 	z-index: 2;
 	background: #2e3d49;
 }
-
-
-/* back, initially hidden pane */
 
 .back {
 	transform: rotateY(180deg);
@@ -159,22 +182,16 @@ footer {
 	background: #2d3c49;
 }
 
-.player-info {
-	font-size: 24px;
-	font-weight: bold;
-	color: #2e3d49
-}
 
-.player-name {
-	text-transform: uppercase;
-}
+/* Media Query */
 
 @media screen and (max-width: 768px) {
-	.deck,
-	.deck-stats {
+	.information,
+	.card-deck,
+	.game-stats {
 		width: 500px;
 	}
-	.deck-stats {
+	.game-stats {
 		margin-top: 20px;
 	}
 	.card-item,
@@ -183,14 +200,18 @@ footer {
 		width: 100px;
 		height: 100px;
 	}
+	.instruct-info .fa-keyboard-o {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 560px) {
-	.deck,
-	.deck-stats {
+	.information,
+	.card-deck,
+	.game-stats {
 		width: 450px;
 	}
-	.deck-stats {
+	.game-stats {
 		margin-top: 40px;
 	}
 	.card-item,
@@ -202,8 +223,9 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-	.deck,
-	.deck-stats {
+	.information,
+	.card-deck,
+	.game-stats {
 		width: 400px;
 	}
 	.card-item,
@@ -215,8 +237,9 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
-	.deck,
-	.deck-stats {
+	.information,
+	.card-deck,
+	.game-stats {
 		width: 360px;
 	}
 	.card-item,
