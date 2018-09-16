@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta tags-->
+    <meta charset="UTF-8">
+    <meta name="description" content="The real-life game, players flip over cards to locate the pairs that match.">
+    <meta name="keywords" content="Front End, Memory Game, Project, Skills, Work, Concentration, Guess">
+    <meta name="author" content="Pradeep Kumar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./favicon.ico">
+
+    <!--title-->
+    <title>Memory Game | Empower Guess & Concentration</title>
+
+    <!--vendor stylesheets-->
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!--vendor scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!--app stylesheets-->
+    <link rel="stylesheet" href="./css/leader.style.css">
+    <link rel="stylesheet" href="./css/modal.style.css">
+    <link rel="stylesheet" href="./css/app.style.css">
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <h1>Matching Game</h1>
+    </header>
+
+    <!--main content-->
+    <main>
+        <section>
+            <!--user info-->
+            <div class="information">
+                <div class="player-info">
+                    <span>HELLO !</span>
+                    <span class="player-name"></span>
+                </div>
+                <div class="instruct-info">
+                    <i class="fa fa-2x fa-keyboard-o"></i>
+                    <i class="fa fa-2x fa-info-circle"></i>
+                </div>
+            </div>
+            <!--game stats-->
+            <div class="game-stats">
+                <div class="star-count">
+                </div>
+                <div class="moves">
+                    <span class="moves-count"></span>&nbsp;
+                    <span>Moves</span>
+                </div>
+                <div class="matches">
+                    <span class="matches-count"></span>&nbsp;
+                    <span>Match</span>
+                </div>
+                <div class="timer">
+                    <i class="fa fa-clock-o"></i>&nbsp;
+                    <span class="timer-count"></span>
+                </div>
+                <div class="restart">
+                    <i class="fa fa-repeat"></i>
+                </div>
+            </div>
+            <!--card deck-->
+            <div class="card-deck">
+            </div>
+        </section>
+    </main>
+
+    <!--Leader Board-->
+    <div class="leader-board">
+        <div class="leader-header">
+            <span class="title">Top Scorers</span>
+            <i class="fa fa-angle-up"></i>
+            <i class="fa fa-angle-down"></i>
+        </div>
+        <div class="leader-content">
+            <div class="leader-table-head">
+                <div class="record-header">
+                    <div class="record-name">
+                        <span>Player</span>
+                    </div>
+                    <div class="record-moves">
+                        <span>Moves</span>
+                    </div>
+                    <div class="record-time">
+                        <span>Time</span>
+                    </div>
+                    <div class="record-rating">
+                        <span>Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="leader-table-body">
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer>
+    </footer>
+
+    <!-- Start Modal -->
+    <div id="startModal" class="modal-box form-modal">
+        <div class="modal-content">
+            <i class="fa fa-4x fa-address-card"></i>
+            <h4>Player Info</h4>
+            <div class="modal-body">
+                <div class="form-wrapper">
+                    <div class="input-field">
+                        <i class="material-icons prefix">
+                            <i class="fa fa-user-circle-o"></i>
+                        </i>
+                        <input type="text" id="playerName" class="autocomplete" autofocus maxlength="20">
+                        <label for="playerName">Enter Name to Start Game</label>
+                    </div>
+                    <a id="startGame" class="btn disabled waves-effect waves-light">START</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complete Modal -->
+    <div id="completeModal" class="modal-box">
+        <div class="modal-content">
+            <i class="fa fa-6x fa-check-circle-o"></i>
+            <h4>Congratulations</h4>
+            <div class="modal-body">
+                <div class="congrats-wrapper">
+                    <span class="winning-title msg-1"></span>
+                    <span class="msg-1">You Win !!</span>
+                    <span class="winning-stats msg-2"></span>
+                    <span class="msg-2">Woooooo!</span>
+                    <div class="btn-group">
+                        <a id="continueGame" class="btn waves-effect waves-light">Play Again</a>
+                        <span> - OR - </span>
+                        <a id="newGame" class="btn waves-effect waves-light">New Player</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Info Modal -->
+    <div id="gameInfoModal" class="modal-box game-modal">
+        <div class="modal-content">
+            <i class="fa fa-4x fa-info-circle"></i>
+            <h4>About Game</h4>
+            <div class="modal-body">
+                <div class="info-wrapper">
+                    <p>The game board consists of sixteen
+                        <strong>cards</strong> arranged in a grid. The deck is made up of eight different pairs of cards, each with
+                        different symbols on one side. The cards are arranged randomly on the grid with the symbol face down.</p>
+                    <p>The gameplay
+                        <strong>rules</strong> are very simple: flip over
+                        <strong>two</strong> hidden cards at a time to locate the ones that match!</p>
+                    <figure class="showcase-card">
+                        <img src="./img/match-success.png" alt="Matched Cards" title="Matched Cards">
+                        <figcaption class="showcase-info">
+                            <span>If the cards match, both cards show success stay flipped over.</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="showcase-card">
+                        <img src="./img/mismatch-warning.png" alt="Mismatched Cards" title="Mismatched Cards">
+                        <figcaption class="showcase-info">
+                            <span>If the cards do not match, both cards show warning and flipped back.</span>
+                        </figcaption>
+                    </figure>
+                    <p>The game ends once all cards have been correctly matched.</p>
+                    <a id="closeInfoModalBtn" class="btn waves-effect waves-light">CLOSE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Info Modal -->
+    <div id="keyInfoModal" class="modal-box key-modal">
+        <div class="modal-content">
+            <i class="fa fa-4x fa-keyboard-o"></i>
+            <h4>Key Controls</h4>
+            <div class="modal-body">
+                <div class="key-mapper">
+                    <div>
+                        <span class="key-code">LEFT KEY</span>
+                        <span>To Move Left</span>
+                    </div>
+                    <div>
+                        <span class="key-code">RIGHT KEY</span>
+                        <span>To Move Right</span>
+                    </div>
+                    <div>
+                        <span class="key-code">UP KEY</span>
+                        <span>To Move Upward</span>
+                    </div>
+                    <div>
+                        <span class="key-code">DOWN KEY</span>
+                        <span>To Mode Down</span>
+                    </div>
+                    <div>
+                        <span class="key-code">ENTER KEY</span>
+                        <span>To Flip Card</span>
+                    </div>
+                    <div>
+                        <span class="key-code">SPACE KEY</span>
+                        <span>To Reset Game</span>
+                    </div>
+                </div>
+                <a id="closeKeyModalBtn" class="btn waves-effect waves-light">CLOSE</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!--app scripts-->
+<script src="./js/modal.script.js"></script>
+<script src="./js/leader.script.js"></script>
+<script src="./js/timer.script.js"></script>
+<script src="./js/control.script.js"></script>
+<script src="./js/app.script.js"></script>
+
+</html>

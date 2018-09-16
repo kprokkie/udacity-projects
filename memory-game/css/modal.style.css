@@ -1,0 +1,174 @@
+/*------------------------------------------------------------------
+[Modal Stylesheet]
+-------------------------------------------------------------------*/
+
+.modal-box {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	height: 100vh;
+	border: 1px solid #888;
+	width: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-content .fa {
+	color: #04bbad;
+}
+
+.modal-content .fa.fa-6x {
+	font-size: 6em;
+}
+
+.modal-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 20px;
+}
+
+.modal-body h4 {
+	margin: 5px 0;
+}
+
+
+/* Form Modal */
+
+.form-wrapper {
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 40px;
+}
+
+.form-wrapper .input-field {
+	margin: 40px 0;
+	width: 100%;
+}
+
+
+/* Congrats Modal */
+
+.congrats-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 40px;
+}
+
+.congrats-wrapper .msg-1 {
+	display: block;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.congrats-wrapper .winning-title {
+	color: #2e3d49
+}
+
+.congrats-wrapper .winning-stats {
+	margin: 20px 0;
+}
+
+.congrats-wrapper .msg-2 {
+	display: block;
+	font-size: 20px;
+}
+
+.congrats-wrapper .btn-group {
+	margin: 40px 0;
+}
+
+
+/* Game Modal */
+
+.info-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.info-wrapper .showcase-card {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.info-wrapper .showcase-card img {
+	height: 100px;
+	width: 200px;
+}
+
+.info-wrapper .showcase-info {
+	font-style: italic;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+/* Key Modal */
+
+.key-mapper {
+	width: 100%;
+	font-size: 18px;
+	width: 400px;
+	margin-top: 40px;
+}
+
+.key-mapper>div {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0px;
+}
+
+.key-mapper .key-code {
+	font-weight: bold;
+}
+
+.key-modal .btn {
+	margin-top: 20px;
+}
+
+
+/* Media Query */
+
+@media screen and (max-width: 1024px) {
+	.modal-content {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.modal-content {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.modal-content {
+		width: 100%;
+	}
+	.form-wrapper {
+		width: 300px;
+	}
+}

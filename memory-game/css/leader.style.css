@@ -1,0 +1,125 @@
+/*------------------------------------------------------------------
+[Leader Stylesheet]
+-------------------------------------------------------------------*/
+
+.leader-board {
+	position: fixed;
+	right: 0;
+	width: 300px;
+	bottom: -230px;
+	transition: bottom 0.5s ease-in-out;
+	height: 270px;
+}
+
+.leader-board .leader-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background: #02b3e4;
+	color: #fff;
+	cursor: pointer;
+	height: 40px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.leader-header .leader-title {
+	font-size: 24px;
+}
+
+.leader-board .leader-body {
+	background: #fff;
+	height: 100%;
+}
+
+.leader-board.open {
+	bottom: 0;
+}
+
+.leader-board .leader-header .fa-angle-down {
+	display: none;
+}
+
+.leader-board.open .leader-header .fa-angle-down {
+	display: block;
+}
+
+.leader-board.open .leader-header .fa-angle-up {
+	display: none;
+}
+
+.leader-content {
+	background: #fff;
+	height: 100%;
+}
+
+.leader-content.hide-head {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.leader-content.hide-head .leader-table-head {
+	display: none;
+}
+
+.leader-table-body .record-item,
+.leader-table-head .record-header {
+	display: flex;
+	height: 40px;
+	align-items: center;
+	border-bottom: 1px solid #2e3d49;
+	padding: 0 10px;
+}
+
+.leader-table-body .record-item:nth-of-type(2n) {
+	background: #EAEAEA;
+}
+
+.leader-table-head .record-header {
+	height: 30px;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.record-header .record-name,
+.record-item .record-name {
+	flex: 2;
+	font-weight: bold;
+}
+
+.record-header .record-time,
+.record-item .record-time {
+	flex: 1;
+}
+
+.record-header .record-moves,
+.record-item .record-moves {
+	flex: 1;
+}
+
+.record-header .record-rating,
+.record-item .record-rating {
+	flex: 1;
+}
+
+.record-item .fa {
+	font-size: 10px;
+	color: #32e232;
+}
+
+
+/* Media Query */
+
+@media screen and (max-width: 480px) {
+	.leader-board {
+		width: 100%;
+	}
+}
