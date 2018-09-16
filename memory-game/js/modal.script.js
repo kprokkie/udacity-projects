@@ -36,7 +36,6 @@ let currentPlayer = null;
  * @param {HTMLElement} modal - modal to be loaded
  */
 function loadModal(modal) {
-	removeKeyEventListener(); // control <script>
 	modal.style.display = 'block';
 	modal.querySelector('.modal-content').classList.add(...modalInClasses);
 }
@@ -46,7 +45,6 @@ function loadModal(modal) {
  * @param {HTMLElement} modal - modal to be closed
  */
 function hideModal(modal) {
-	addKeyEventListener(); // control <script>
 	modal.querySelector('.modal-content').classList.remove(...modalInClasses);
 	modal.querySelector('.modal-content').classList.add(...modalOutClasses);
 	setTimeout(() => {

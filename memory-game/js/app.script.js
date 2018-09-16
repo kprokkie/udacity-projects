@@ -326,6 +326,8 @@ function initGame() {
 	createCards();
 	addCardClickListener();
 
+	addKeyEventListener(); // control <script>
+
 	clearTimer(); // timer <script>
 	updateMovesCount();
 	updateMatchCount();

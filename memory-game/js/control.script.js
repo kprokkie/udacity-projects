@@ -27,15 +27,6 @@ function addKeyEventListener() {
 }
 
 /**
- * @description Removing key event listener from document
- */
-function removeKeyEventListener() {
-	document.removeEventListener('keydown', function (e) {
-		handleKeyEvent(e);
-	});
-}
-
-/**
  * @description Handle key events & filter those keys only which required to play game
  * @param {Event} e - Event raised by key
  */
