@@ -1,3 +1,92 @@
 body {
     text-align: center;
+    padding: 0 50px;
+}
+
+.box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fffaf1; 
+    width: 400px;
+    height: 540px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.box.success {
+    background: #00b32c; 
+}
+
+.box.failure {
+    background: #b3000c; 
+}
+
+.left-panel {
+    float: left;
+}
+
+.left-panel > p {
+    font-weight: bold;
+    margin: 10px;
+}
+
+.right-panel {
+    float: right;
+}
+
+.right-panel > p {
+    font-weight: bold;
+    margin: 10px;
+}
+
+.level {
+    font-size: 35px;
+}
+
+.chances {
+    font-size: 30px;
+}
+
+.status {
+    font-size: 50px;
+}
+
+.status.win {
+    color: #00b32c;
+}
+
+.status.loose {
+    color: #b3000c;
+}
+
+.score {
+    font-size: 30px; 
+    color: #111e6c;
+}
+
+.current-score {
+    font-size: 50px; 
+}
+
+.highest-score {
+    font-size: 50px;
+}
+
+.mask {
+    font-size: 35px;
+}
+
+.images img {
+    cursor: pointer;
+}
+
+.images .selected {
+    border: 2px solid #00e5ee;
+    border-radius: 5px;
+}
+
+.seprator {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    margin: 15px;
 }

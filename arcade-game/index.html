@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <!--meta tags-->
     <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
+    <meta name="description" content="The real-life game, players flip over cards to locate the pairs that match.">
+    <meta name="keywords" content="Front End, Memory Game, Project, Skills, Work, Concentration, Guess">
+    <meta name="author" content="Pradeep Kumar">
+
+    <link rel="icon" href="./favicon.ico">
+
+    <!--title-->
+    <title>Arcade Game | Udacity</title>
+
+    <!--vendor stylesheets-->
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!--app stylesheets-->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
+    <h4>Arcade Game</h1>
+        <div class="left-panel box">
+            <p class="mask">Choose Player Mask</p>
+            <div class="images">
+                <img id="hornBoy" class="selected" src="./images/char-boy.png" alt="Char Boy">
+                <img id="catGirl" src="./images/char-cat-girl.png" alt="Char Cat Girl">
+                <img id="hornGirl" src="./images/char-horn-girl.png" alt="Char Horn Girl">
+                <img id="pinkGirl" src="./images/char-pink-girl.png" alt="Char Pink Girl">
+                <img id="princeGirl" src="./images/char-princess-girl.png" alt="Char Princess Girl">
+            </div>
+        </div>
+        <div class="right-panel box">
+            <p class="level"></p>
+            <p class="chances"></p>
+            <div class="seprator"></div>
+            <p class="score">Score</p>
+            <p class="current-score"></p>
+            <p class="score">Highest Score</p>
+            <p class="highest-score"></p>
+            <p class="status win"></p>
+        </div>
+        <script src="js/resources.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/engine.js"></script>
 </body>
+
 </html>
