@@ -2,6 +2,8 @@
 
 It is simple responsive website that will display images, descriptions, and links to each of the portfolio projects will complete throughout the course of **Nanodegree** program.
 
+> [Let's View Live !!](https://kprokkie.github.io/build-portfolio-site/)
+
 ## Topics Covered
 
 - HTML Syntax

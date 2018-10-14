@@ -1,10 +1,10 @@
 # UDACITY PROJECTS
 
-> 1. Portfolio Site
+> 1. [Portfolio Site](https://kprokkie.github.io/build-portfolio-site/)
 
 It is simple responsive website that will display images, descriptions, and links to each of the portfolio projects will complete throughout the course of Nanodegree program.
 
-> 2. Memory Game
+> 2. [Memory Game](https://kprokkie.github.io/memory-game/)
 
 Build a complete browser-based card matching game (also known as Concentration). The game randomly shuffles the cards. A user wins once all cards have successfully been matched.
 

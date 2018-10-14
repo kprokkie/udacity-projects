@@ -11,6 +11,8 @@ The game board consists of sixteen **cards** arranged in a grid. The deck is mad
 The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
 ```
 
+> [Let's Play Live !!](https://kprokkie.github.io/memory-game/)
+
 > On each turn:
 
 - The player flips one card over to reveal its underlying symbol.
