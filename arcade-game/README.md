@@ -1,13 +1,15 @@
 # ![Screenshot](favicon.ico) Arcade Game
 
-## How the Game Works ?
-
 In this game you have a Player and Enemies (bugs).
 
 ```
 The goal of the player is to reach the water, without colliding into any one of the enemies.
 ```
 ![Screenshot](./images/game-demo.gif)
+
+> [Let's Play Live !!](https://kprokkie.github.io/arcade-game/)
+
+## How the Game Works ?
 
 - The player can move left, right, up and down
 - The enemies move at varying speeds at different game levels on the paved block portion of the game board
@@ -27,5 +29,5 @@ The goal of the player is to reach the water, without colliding into any one of 
 
 In order to play the game properly, consider the following steps:
 
-- Clone or download this repository
+- Clone or download this repository or [play here](https://kprokkie.github.io/arcade-game/).
 - Open the index.html file in any modern browser, click inside the game area, and enjoy playing the game.
