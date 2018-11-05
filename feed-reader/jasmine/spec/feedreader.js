@@ -123,6 +123,9 @@ $(function () {
 
         beforeEach(function (done) {
 
+            originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+            jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
             // load initial feed
             loadFeed(0, function () {
                 initialFeedHtml = $('.feed').html();
@@ -137,23 +140,22 @@ $(function () {
             });
         });
 
+        afterEach(function () {
+            jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+        });
+
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
         it('should check content actually changes', function (done) {
+            // feed content
             expect(initialFeedHtml).not.toBe(nextFeedHtml);
-            done();
-        });
-
-
-        /* ADDITIONAL: Test that ensures when a new feed is loaded
-         * the heading of feed actually changes.
-         */
-        it('should check feed heading actually changes', function (done) {
+            // feed title
             expect(initialFeedHeader).not.toBe(nextFeedHeader);
             done();
         });
+
     });
 
     /* ADDITIONAL: New test suite named "Menu Selection" */
