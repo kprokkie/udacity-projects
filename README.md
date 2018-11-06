@@ -11,3 +11,7 @@ Build a complete browser-based card matching game (also known as Concentration).
 > 3. [Arcade Game](https://kprokkie.github.io/arcade-game/)
 
 In this game you have a Player and Enemies (bugs). The goal of the player is to reach the water, without colliding into any one of the enemies.
+
+> 4. [Feed Reader](https://kprokkie.github.io/feed-reader/)
+
+It is a web-based application that reads RSS feeds. Testing the Feed Reader app using Javascript testing framework `Jasmine`.
