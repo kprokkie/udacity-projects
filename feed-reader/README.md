@@ -1,8 +1,8 @@
-# Feed Reader Testing Project
+# ![Screenshot](favicon.ico) Feed Reader Testing Project
 
 It is a web-based application that reads RSS feeds.
 
-Testing the Feed Reader app using Javascript testing framework `Jasmine`.
+[Testing](https://kprokkie.github.io/feed-reader/) the Feed Reader app using Javascript testing framework `Jasmine`.
 
 ## Why Testing?
 
