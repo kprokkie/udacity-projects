@@ -1,4 +1,4 @@
-# UDACITY PROJECTS
+# ![Screenshot](udacity.png) UDACITY PROJECTS
 
 > 1. [Portfolio Site](https://kprokkie.github.io/build-portfolio-site/)
 
