@@ -31,3 +31,16 @@ This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://w
 ### Note about ES6
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future-proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write.
+
+py -m http.server 8000
+
+http://localhost:8000/
+
+http://www.responsinator.com/?url=localhost%3A8000%2F
+
+https://dominicom.github.io/restaurant-review-app/
+
+https://github.com/dominicom/restaurant-review-app
+
+https://portfolio.katiegirl.net/2018/07/10/restaurant-reviews-app-stage-1/
+
