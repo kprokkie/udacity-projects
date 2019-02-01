@@ -1,13 +1,28 @@
 let restaurants,
   neighborhoods,
-  cuisines
-var newMap
-var markers = []
+  cuisines;
+var newMap;
+var markers = [];
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+
+  // Set up service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then((registration) => {
+        // Registration was successful
+        console.log('ServiceWorker registered, scope: ', registration.scope);
+      })
+      .catch((error) => {
+        // registration failed
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  }
+
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
@@ -25,7 +40,7 @@ fetchNeighborhoods = () => {
       fillNeighborhoodsHTML();
     }
   });
-}
+};
 
 /**
  * Set neighborhoods HTML.
@@ -38,7 +53,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     option.value = neighborhood;
     select.append(option);
   });
-}
+};
 
 /**
  * Fetch all cuisines and set their HTML.
@@ -52,7 +67,7 @@ fetchCuisines = () => {
       fillCuisinesHTML();
     }
   });
-}
+};
 
 /**
  * Set cuisines HTML.
@@ -66,19 +81,17 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     option.value = cuisine;
     select.append(option);
   });
-}
+};
 
 /**
  * Initialize leaflet map, called from HTML.
- * public token: pk.eyJ1Ijoia3Byb2traWUiLCJhIjoiY2pxZnM5Yjc4NTdvYTQzcGQxZmRpbTl2NSJ9.FZFln1ecozqcSjI7AlATWw
- * secret token: sk.eyJ1Ijoia3Byb2traWUiLCJhIjoiY2pxZnNqdG8yMmE3bTQzcGIxcnpiMWpqZSJ9.XFXwYespB67CaKPLBN0gEw
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token=pk.eyJ1Ijoia3Byb2traWUiLCJhIjoiY2pxZnM5Yjc4NTdvYTQzcGQxZmRpbTl2NSJ9.FZFln1ecozqcSjI7AlATWw', {
     mapboxToken: 'pk.eyJ1Ijoia3Byb2traWUiLCJhIjoiY2pxZnM5Yjc4NTdvYTQzcGQxZmRpbTl2NSJ9.FZFln1ecozqcSjI7AlATWw',
     maxZoom: 18,
@@ -89,19 +102,8 @@ initMap = () => {
   }).addTo(newMap);
 
   updateRestaurants();
-}
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
+  document.getElementById('map').tabIndex = '-1';
+};
 
 /**
  * Update page and map for current restaurants.
@@ -123,8 +125,8 @@ updateRestaurants = () => {
       resetRestaurants(restaurants);
       fillRestaurantsHTML();
     }
-  })
-}
+  });
+};
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
@@ -141,7 +143,7 @@ resetRestaurants = (restaurants) => {
   }
   self.markers = [];
   self.restaurants = restaurants;
-}
+};
 
 /**
  * Create all restaurants HTML and add them to the webpage.
@@ -152,7 +154,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
-}
+};
 
 /**
  * Create restaurant HTML.
@@ -163,27 +165,61 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = 'Image of ' + restaurant.name + ' restaurant';
   li.append(image);
+
+  const info = document.createElement('div');
+  info.className = 'info';
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
-  li.append(name);
+  info.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+  info.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  li.append(address);
+  info.append(address);
+
+  const hr = document.createElement('hr');
+  info.append(hr);
+
+  const category = document.createElement('div');
+  category.className = 'category';
+
+  const rating = document.createElement('span');
+  rating.innerHTML = 'Rating: ' + restaurantRating(restaurant);
+  category.append(rating);
+
+  const type = document.createElement('span');
+  type.innerHTML = restaurant.cuisine_type;
+  category.append(type);
+
+  info.append(category);
+  li.append(info);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute('aria-label', 'Details of ' + restaurant.name + ' restaurant, ' + restaurant.neighborhood);
+  more.tabIndex = '0';
   li.append(more)
 
-  return li
-}
+  return li;
+};
+
+/**
+ * Calculate rating based on reviews rating
+ */
+restaurantRating = (restaurant) => {
+  let reviews = restaurant.reviews.map((r) => r.rating);
+  let rating = reviews.reduce((a, b) => a + b, 0) / reviews.length;
+  rating = rating.toFixed(1);
+
+  return rating;
+};
 
 /**
  * Add markers for current restaurants to the map.
@@ -198,16 +234,4 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
-
-} 
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
-
+}; 
