@@ -1,102 +1,83 @@
-@media screen and (max-width: 1024px) { 
-    nav {
-        background: linear-gradient(to bottom, #14161b 0%, #4f5669 100%);
-    }
-   
-    .filter-options h2 {
-        display: none;
-    }
+@media screen and (max-width: 1024px) {
+	nav {
+		background: linear-gradient(to bottom, #14161b 0%, #4f5669 100%);
+	}
+	.filter-options h2 {
+		display: none;
+	}
 }
 
-@media screen and (max-width: 768px) { 
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav h1 a {
-        font-size: 2rem;
-        letter-spacing: 5px;
-    }
-
-    .filter-options {
-        width: 100%;
-    }
-
-    .filter-options select {
-        height: 1.6rem;
-        width: 180px;
-    }
-
-    #map {
-        height: 300px;
-    }
-
-    #restaurants-list li {
-        margin: 0.8rem;
-    }
-
-    #restaurant-container {
-        flex-direction: column;
-    }
-
-    #restaurant-container .restaurant-info {
-        margin: 0 0 1rem;
-    }
+@media screen and (max-width: 768px) {
+	nav {
+		flex-direction: column;
+		align-items: center;
+	}
+	nav h1 a {
+		font-size: 2rem;
+		letter-spacing: 5px;
+	}
+	.filter-options {
+		width: 100%;
+	}
+	.filter-options select {
+		height: 1.6rem;
+		width: 180px;
+	}
+	#map {
+		height: 300px;
+	}
+	#restaurants-list li {
+		margin: 0.8rem;
+	}
+	#restaurant-container {
+		flex-direction: column;
+	}
+	#restaurant-container .restaurant-info {
+		margin: 0 0 1rem;
+	}
 }
 
-@media screen and (max-width: 420px) { 
-    .filter-options select {
-        width: 160px;
-        padding: 0;
-    }
-
-    #restaurants-list li {
-        width: 100%;
-        margin: 1rem 0 0 0;
-    }
-
-    #restaurants-list li:last-child {
-        margin-bottom: 1rem;
-    }
-
-    #maincontent #map-container { 
-        padding: 0;
-    }
-
-    .inside #map {
-        margin: 1rem 0;
-    }
-
-    #maincontent .seprator {
-        display: none;
-    }
-
-    #restaurant-container .restaurant-info {
-        flex-direction: column;
-        padding-top: 0.4rem;
-    }
-
-    #restaurant-container .restaurant-time {
-        padding-top: 0.4rem; 
-    }
-
-    #restaurant-img {
-        width: 100%;
-    }
-
-    #restaurant-name {
-        margin: 0 0 0.4rem;
-    }
-
-    #restaurant-hours td {
-        font-size: 1rem; 
-    }
-
-    #restaurant-rating {
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        font-size: 1rem;
-    }
+@media screen and (max-width: 420px) {
+	.filter-options select {
+		width: 160px;
+		padding: 0;
+	}
+	#restaurants-list li {
+		width: 100%;
+		margin: 1rem 0 0 0;
+	}
+	#restaurants-list li:last-child {
+		margin-bottom: 1rem;
+	}
+	#maincontent #map-container {
+		padding: 0;
+	}
+	.inside #map {
+		margin: 1rem 0;
+	}
+	#maincontent .seprator {
+		display: none;
+	}
+	#restaurant-container .restaurant-info {
+		flex-direction: column;
+		padding-top: 0.4rem;
+	}
+	#restaurant-container .restaurant-time {
+		padding-top: 0.4rem;
+	}
+	#restaurant-img {
+		width: 100%;
+	}
+	#restaurant-name {
+		margin: 0 0 0.4rem;
+	}
+	#restaurant-hours td {
+		font-size: 1rem;
+	}
+	#restaurant-rating {
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		font-size: 1rem;
+	}
 }
