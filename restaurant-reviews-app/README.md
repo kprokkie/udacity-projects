@@ -10,3 +10,8 @@ We was provided with the code for a restaurant reviews website. This code had a 
 To run the project, download or clone the repository in your computer and follow the instructions below:
 
 In the repository folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this. In a terminal, spin up the server with `py -m http.server 8000` and with your server running, visit the sit `http://localhost:8000` to see the live site or [Let's View Live Here !!](https://kprokkie.github.io/restaurant-reviews-app/)
+
+## Test Application
+
+1. Restaurant List [Desktop](https://kprokkie.github.io/restaurant-reviews-app/) [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fkprokkie.github.io%2Frestaurant-reviews-app%2F)
+2. Restaurant Info [Desktop](https://kprokkie.github.io/restaurant-reviews-app/restaurant.html?id=1) [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fkprokkie.github.io%2Frestaurant-reviews-app%2Frestaurant.html%3Fid%3D1)
