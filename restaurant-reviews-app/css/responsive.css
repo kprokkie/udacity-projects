@@ -35,6 +35,14 @@
     #restaurants-list li {
         margin: 0.8rem;
     }
+
+    #restaurant-container {
+        flex-direction: column;
+    }
+
+    #restaurant-container .restaurant-info {
+        margin: 0 0 1rem;
+    }
 }
 
 @media screen and (max-width: 420px) { 
@@ -56,8 +64,39 @@
         padding: 0;
     }
 
+    .inside #map {
+        margin: 1rem 0;
+    }
+
     #maincontent .seprator {
         display: none;
     }
 
+    #restaurant-container .restaurant-info {
+        flex-direction: column;
+        padding-top: 0.4rem;
+    }
+
+    #restaurant-container .restaurant-time {
+        padding-top: 0.4rem; 
+    }
+
+    #restaurant-img {
+        width: 100%;
+    }
+
+    #restaurant-name {
+        margin: 0 0 0.4rem;
+    }
+
+    #restaurant-hours td {
+        font-size: 1rem; 
+    }
+
+    #restaurant-rating {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-size: 1rem;
+    }
 }
