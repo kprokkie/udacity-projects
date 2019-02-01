@@ -8,6 +8,21 @@ var markers = [];
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+
+  // Set up service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then((registration) => {
+        // Registration was successful
+        console.log('ServiceWorker registered, scope: ', registration.scope);
+      })
+      .catch((error) => {
+        // registration failed
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  }
+
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
@@ -73,10 +88,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token=pk.eyJ1Ijoia3Byb2traWUiLCJhIjoiY2pxZnM5Yjc4NTdvYTQzcGQxZmRpbTl2NSJ9.FZFln1ecozqcSjI7AlATWw', {
     mapboxToken: 'pk.eyJ1Ijoia3Byb2traWUiLCJhIjoiY2pxZnM5Yjc4NTdvYTQzcGQxZmRpbTl2NSJ9.FZFln1ecozqcSjI7AlATWw',
     maxZoom: 18,
@@ -199,7 +214,7 @@ createRestaurantHTML = (restaurant) => {
  * Calculate rating based on reviews rating
  */
 restaurantRating = (restaurant) => {
-  let reviews = restaurant.reviews.map( (r) => r.rating);
+  let reviews = restaurant.reviews.map((r) => r.rating);
   let rating = reviews.reduce((a, b) => a + b, 0) / reviews.length;
   rating = rating.toFixed(1);
 
